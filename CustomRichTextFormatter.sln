@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomRichTextFormatter", "CustomRichTextFormatter\CustomRichTextFormatter.csproj", "{7E77C04C-92FD-489B-B2B0-D3EC84A73A52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTFTester", "RTFTester\RTFTester.csproj", "{5740B378-D4C1-4B49-A236-4CD3A8887DF1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7E77C04C-92FD-489B-B2B0-D3EC84A73A52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E77C04C-92FD-489B-B2B0-D3EC84A73A52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E77C04C-92FD-489B-B2B0-D3EC84A73A52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E77C04C-92FD-489B-B2B0-D3EC84A73A52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5740B378-D4C1-4B49-A236-4CD3A8887DF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5740B378-D4C1-4B49-A236-4CD3A8887DF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5740B378-D4C1-4B49-A236-4CD3A8887DF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5740B378-D4C1-4B49-A236-4CD3A8887DF1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EB142635-A435-4D89-9C9F-29136F223124}
+	EndGlobalSection
+EndGlobal

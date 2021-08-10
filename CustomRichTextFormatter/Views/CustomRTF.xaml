@@ -1,0 +1,82 @@
+﻿<UserControl x:Class="CustomRichTextFormatter.Views.CustomRtf"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CustomRichTextFormatter.Views"
+             xmlns:Beh="clr-namespace:CustomRichTextFormatter.Behaviours"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:Coll="clr-namespace:CustomRichTextFormatter.Common"
+             mc:Ignorable="d" x:Name="MainUserControl" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/CustomRichTextFormatter;component/Theme/ImageResourceDictionary.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+            <ObjectDataProvider x:Key="FontList" d:IsDataSource="True" ObjectType="{x:Type Coll:FontFamilyList}"/>
+            <ObjectDataProvider x:Key="FontHeight" d:IsDataSource="True" ObjectType="{x:Type Coll:FontHeightList}"/>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <DockPanel x:Name="RootElement">
+        <ToolBar x:Name="ToolBarTop" DockPanel.Dock="Top" >
+            <Separator/>
+            <Button x:Name="ToolStripButtonCut"  Command="ApplicationCommands.Cut" ToolTip="Cut" Cursor="Hand">
+                <Image Source="{StaticResource ImgCut}" Stretch="None"/>
+            </Button>
+            <Button x:Name="ToolStripButtonCopy"  Command="ApplicationCommands.Copy" ToolTip="Copy" Cursor="Hand">
+                <Image Source="{StaticResource ImgCopy}" Stretch="None"/>
+            </Button>
+            <Button x:Name="ToolStripButtonPaste"  Command="ApplicationCommands.Paste" ToolTip="Paste" Cursor="Hand">
+                <Image Source="{StaticResource ImgPaste}" Stretch="None"/>
+            </Button>
+            <Button x:Name="ToolStripButtonUndo" Command="ApplicationCommands.Undo" ToolTip="Undo" Cursor="Hand">
+                <Image Source="{StaticResource ImgUndo}" Stretch="None"/>
+            </Button>
+            <Button x:Name="ToolStripButtonRedo" Command="ApplicationCommands.Redo" ToolTip="Redo" Cursor="Hand">
+                <Image Source="{StaticResource ImgRedo}" Stretch="None"/>
+            </Button>
+            <Separator/>
+            <ToggleButton x:Name="ToolStripButtonAlignLeft"  Command="EditingCommands.AlignLeft" ToolTip="Align Left"  Cursor="Hand">
+                <Image Source="{StaticResource ImgAlignLeft}" Stretch="None"/>
+            </ToggleButton>
+            <Separator/>
+            <ToggleButton x:Name="ToolStripButtonAlignCenter"  Command="EditingCommands.AlignCenter" ToolTip="Align Center"  Cursor="Hand">
+                <Image Source="{StaticResource ImgAlignCenter}" Stretch="None"/>
+            </ToggleButton>
+            <Separator/>
+            <ToggleButton x:Name="ToolStripButtonAlignRight"  Command="EditingCommands.AlignRight" ToolTip="Align Right"  Cursor="Hand">
+                <Image Source="{StaticResource ImgAlignRight}" Stretch="None"/>
+            </ToggleButton>
+            <Separator/>
+            <Button x:Name="ToolStripButtonIndent"  Command="EditingCommands.IncreaseIndentation" ToolTip="Increase Indent" Cursor="Hand">
+                <Image Source="{StaticResource ImgIndent}" Stretch="None"/>
+            </Button>
+            <Separator/>
+            <Button x:Name="ToolStripButtonIndentDelete"  Command="EditingCommands.DecreaseIndentation" ToolTip="Decrease Indent" Cursor="Hand">
+                <Image Source="{StaticResource ImgIndentRemove}" Stretch="None"/>
+            </Button>
+            <Separator/>
+            <ToggleButton x:Name="ToolStripButtonBold"  Command="EditingCommands.ToggleBold" ToolTip="Bold">
+                <Image Source="{StaticResource ImgBold}" Stretch="None"/>
+            </ToggleButton>
+            <ToggleButton x:Name="ToolStripButtonItalic"  Command="EditingCommands.ToggleItalic" ToolTip="Italic">
+                <Image Source="{StaticResource ImgItalic}" Stretch="None"/>
+            </ToggleButton>
+            <ToggleButton x:Name="ToolStripButtonUnderline" Command="EditingCommands.ToggleUnderline" ToolTip="Underline">
+                <Image Source="{StaticResource ImgUnderline}" Stretch="None"/>
+            </ToggleButton>
+            <ToggleButton x:Name="ToolStripButtonStrikeout" ToolTip="Strikeout" >
+                <Image Source="{StaticResource ImgStrikeout}" Stretch="None"/>
+            </ToggleButton>
+            <Separator/>
+            <ComboBox x:Name="Fonttype" ItemsSource="{Binding Mode=OneWay, Source={StaticResource FontList}}"  Background="SkyBlue" Width="100" Foreground="#ffffff" Cursor="Hand"/>
+            <ComboBox x:Name="Fontheight" ItemsSource="{Binding Mode=OneWay, Source={StaticResource FontHeight}}"   Background="SkyBlue" Width="60" Foreground="#ffffff" Cursor="Hand"/>
+        </ToolBar>
+        <Separator/>
+        <RichTextBox x:Name="RichTextControl"   SpellCheck.IsEnabled="True" VerticalScrollBarVisibility="Auto" AcceptsReturn="True" AcceptsTab="True" />
+    </DockPanel>
+    <i:Interaction.Behaviors>
+        <Beh:RichTextFormatbehaviour/>
+    </i:Interaction.Behaviors>
+</UserControl>
